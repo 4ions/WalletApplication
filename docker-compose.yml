@@ -1,0 +1,46 @@
+version: '3'
+
+networks:
+  walletapp:
+    name: walletapp
+
+services:
+  postgres:
+      image: postgres
+      networks:
+        - walletapp
+      restart: always
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: root
+        POSTGRES_DB: walletapp_development
+      healthcheck:
+        test: 'psql -U $$POSTGRES_USER -d $$POSTGRES_DB -c "select 1" || exit 1'
+        interval: 30s
+        retries: 5
+      ports:
+        - 5432:5432
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    networks:
+        - walletapp
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3200:3200
+    depends_on:
+      - postgres
+    networks:
+      - walletapp
+    environment:
+      NODE_ENV: production
+  
+    
