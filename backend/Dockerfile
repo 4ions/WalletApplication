@@ -20,5 +20,7 @@ RUN chmod 777 ./startup.sh
 # Exponemos el puerto 5000 para que el contenedor sea accesible desde el exterior
 EXPOSE 3200
 
+RUN NODE_ENV=production
+
 # Comando para ejecutar el servidor del backend
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
