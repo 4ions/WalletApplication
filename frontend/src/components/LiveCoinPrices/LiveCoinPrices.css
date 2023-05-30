@@ -1,0 +1,38 @@
+.live-coin-prices-container {
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .live-coin-prices-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .price-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .price-item {
+    margin: 10px;
+  }
+  
+  .coin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .coin-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .coin-price {
+    color: #888;
+  }
+  

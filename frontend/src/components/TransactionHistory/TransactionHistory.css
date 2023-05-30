@@ -1,0 +1,92 @@
+.transaction-history-container {
+  margin-top: 20px;
+}
+
+.transaction-history-heading {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.transaction-list {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.transaction-item {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.arrow-up,
+.arrow-down {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.arrow-up {
+  border-bottom: 6px solid #333;
+}
+
+.arrow-down {
+  border-top: 6px solid #333;
+}
+
+.transaction-type {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.transaction-details {
+  margin-left: 20px;
+}
+
+.transaction-detail {
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-button:hover {
+  background-color: #ebebeb;
+}
+
+.pagination-button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.transaction-item.send {
+  background-color: #ffebee; /* Fondo rojo para transacciones de tipo SEND */
+}
+
+.transaction-item.receive {
+  background-color: #e8f5e9; /* Fondo verde para transacciones de tipo RECEIVE */
+}

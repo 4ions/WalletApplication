@@ -1,0 +1,50 @@
+.UserBar {
+    position: relative; /* Agregamos posición relativa al contenedor principal */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px;
+    background-color: #f0f0f0;
+    padding: 0 20px;
+  }
+  
+  .UserBar-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .UserBar-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 10px;
+  }
+  
+  .UserBar-username {
+    font-weight: bold;
+  }
+  
+  .UserBar-dropdown {
+    position: fixed; /* Cambiamos la posición a fixed */
+    top: 0; /* Ajustamos la posición de arriba a 0 */
+    left: 0; /* Ajustamos la posición de la izquierda a 0 */
+    list-style: none;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 1;
+  }
+  
+  .UserBar-dropdown li {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .UserBar-dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  
