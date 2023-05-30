@@ -39,14 +39,18 @@ routes(app);
 // Ruta de fallback para enrutar todas las demás solicitudes a tu aplicación React
 const db = require('./db/models');
 
-db.sequelize.sync().then(async () => {
-    console.log('Drop and resync db');
-    await seedUsers.up(db.sequelize.getQueryInterface(), db.Sequelize);
-    await seedCoins.up(db.sequelize.getQueryInterface(), db.Sequelize);
-    await seedUserCoins.up(db.sequelize.getQueryInterface(), db.Sequelize);
+try{
+  db.sequelize.sync().then(async () => {
+      console.log('Drop and resync db');
+      await seedUsers.up(db.sequelize.getQueryInterface(), db.Sequelize);
+      await seedCoins.up(db.sequelize.getQueryInterface(), db.Sequelize);
+      await seedUserCoins.up(db.sequelize.getQueryInterface(), db.Sequelize);
+  
+      app.listen(port, () => {
+        console.log(`Servidor escuchando en el puerto ${port}`);
+      });
+  })
+} catch (error) {
+  console.log(error);
+}
 
-})
-
-app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto ${port}`);
-});
